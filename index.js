@@ -30,6 +30,10 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello");
+})
+
 server.listen(process.env.PORT, () => {
   console.log(`listening on ${process.env.PORT}`);
 });
