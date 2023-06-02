@@ -3,12 +3,13 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const {Server} = require("socket.io");
-const io = new Server(server, {
-  cors:
-  {
-    origin: process.env.CLIENT_URL,
-  }
-});
+const io = new Server(server);
+// , {
+//   cors:
+//   {
+//     origin: process.env.CLIENT_URL,
+//   }
+// });
 
 io.on("connection", (socket) => {
   console.log("connected user. socket id:" + socket.id);
