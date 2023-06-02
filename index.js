@@ -10,8 +10,6 @@ const io = new Server(server, {
   }
 });
 
-const PORT = 3001;
-
 io.on("connection", (socket) => {
   console.log("connected user. socket id:" + socket.id);
 
@@ -32,6 +30,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
+server.listen(process.env.PORT, () => {
+  console.log(`listening on ${process.env.PORT}`);
 });
